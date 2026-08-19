@@ -1,0 +1,361 @@
+/* ============================================================
+   Layer 2: primitives
+   ============================================================ */
+
+.nz-root {
+  background: var(--nzh-bg);
+  color: var(--nzh-text);
+  font-family: var(--nz-font-sans);
+  font-size: var(--nz-size-md);
+  line-height: 1.5;
+}
+
+.nz-num {
+  font-family: var(--nz-font-mono);
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum" 1;
+}
+
+.nz-label {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-xs);
+  letter-spacing: var(--nz-tracking-label);
+  text-transform: uppercase;
+  color: var(--nzh-text-muted);
+}
+
+*:focus-visible {
+  outline: 2px solid var(--nzh-focus);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   Button
+   ============================================================ */
+
+.nz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--nz-unit);
+  min-height: var(--nz-row-height);
+  padding: 0 calc(var(--nz-unit) * 3);
+  border: var(--nz-hairline) solid var(--nzh-border-strong);
+  border-radius: var(--nz-radius);
+  background: transparent;
+  color: var(--nzh-text);
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background 90ms linear, color 90ms linear;
+}
+
+.nz-button:hover:not(:disabled) {
+  background: var(--nzh-row-alt);
+}
+
+.nz-button:active:not(:disabled) {
+  transform: translateY(1px);
+}
+
+.nz-button:disabled {
+  color: var(--nzh-text-faint);
+  border-color: var(--nzh-border);
+  cursor: not-allowed;
+}
+
+.nz-button--primary {
+  background: var(--nzh-action);
+  border-color: var(--nzh-action);
+  color: var(--nzh-action-text);
+}
+
+.nz-button--primary:hover:not(:disabled) {
+  background: var(--nzh-text);
+  border-color: var(--nzh-text);
+  color: var(--nzh-bg);
+}
+
+.nz-button--quiet {
+  border-color: transparent;
+  padding: 0 var(--nz-unit);
+  color: var(--nzh-text-muted);
+}
+
+.nz-button--quiet:hover:not(:disabled) {
+  color: var(--nzh-text);
+  background: transparent;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.nz-button--danger {
+  border-color: var(--nzh-danger);
+  color: var(--nzh-danger);
+}
+
+.nz-button--danger:hover:not(:disabled) {
+  background: var(--nzh-danger);
+  color: var(--nzh-bg);
+}
+
+.nz-button--sm {
+  min-height: 24px;
+  font-size: var(--nz-size-xs);
+  padding: 0 calc(var(--nz-unit) * 2);
+}
+
+/* ============================================================
+   Field (label + input + note)
+   ============================================================ */
+
+.nz-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--nz-unit);
+}
+
+.nz-field__label {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-xs);
+  letter-spacing: var(--nz-tracking-label);
+  text-transform: uppercase;
+  color: var(--nzh-text-muted);
+}
+
+.nz-field__input {
+  min-height: var(--nz-row-height);
+  padding: 0 var(--nz-unit);
+  border: 0;
+  border-bottom: var(--nz-hairline) solid var(--nzh-border-strong);
+  border-radius: var(--nz-radius);
+  background: transparent;
+  color: var(--nzh-text);
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-sm);
+  font-variant-numeric: tabular-nums;
+  width: 100%;
+}
+
+.nz-field__input::placeholder {
+  color: var(--nzh-text-faint);
+}
+
+.nz-field__input:disabled {
+  color: var(--nzh-text-faint);
+  border-bottom-style: dashed;
+}
+
+.nz-field__note {
+  font-size: var(--nz-size-xs);
+  color: var(--nzh-text-muted);
+}
+
+.nz-field--invalid .nz-field__input {
+  border-bottom-color: var(--nzh-danger);
+}
+
+.nz-field--invalid .nz-field__note {
+  color: var(--nzh-danger);
+}
+
+/* ============================================================
+   Badge
+   ============================================================ */
+
+.nz-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: calc(var(--nz-unit) / 2);
+  padding: 1px calc(var(--nz-unit) * 1.5);
+  border: var(--nz-hairline) solid var(--nzh-border);
+  border-radius: var(--nz-radius);
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-xs);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--nzh-text-muted);
+  white-space: nowrap;
+}
+
+.nz-badge--posted {
+  border-color: var(--nzh-action);
+  color: var(--nzh-action);
+}
+
+.nz-badge--pending {
+  border-style: dashed;
+}
+
+.nz-badge--void {
+  border-color: var(--nzh-danger);
+  color: var(--nzh-danger);
+  text-decoration: line-through;
+}
+
+/* ============================================================
+   Panel
+   ============================================================ */
+
+.nz-panel {
+  background: var(--nzh-surface-raised);
+  border: var(--nz-hairline) solid var(--nzh-border);
+  border-radius: var(--nz-radius);
+}
+
+.nz-panel__head {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--nz-gutter);
+  padding: var(--nz-gutter);
+  border-bottom: var(--nz-hairline) solid var(--nzh-border-strong);
+}
+
+.nz-panel__title {
+  margin: 0;
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-sm);
+  font-weight: 600;
+  letter-spacing: var(--nz-tracking-label);
+  text-transform: uppercase;
+}
+
+.nz-panel__ref {
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-xs);
+  color: var(--nzh-text-faint);
+  font-variant-numeric: tabular-nums;
+}
+
+.nz-panel__body {
+  padding: var(--nz-gutter);
+}
+
+/* ============================================================
+   Ledger — the signature component
+   ============================================================ */
+
+.nz-ledger-frame {
+  position: relative;
+}
+
+.nz-ledger-wrap {
+  overflow-x: auto;
+}
+
+.nz-ledger-frame--more::after {
+  content: "Scroll →";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  padding: 3px 6px;
+  border: var(--nz-hairline) solid var(--nzh-border);
+  background: var(--nzh-surface-raised);
+  color: var(--nzh-text-muted);
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-xs);
+  letter-spacing: var(--nz-tracking-label);
+  text-transform: uppercase;
+  pointer-events: none;
+}
+
+.nz-ledger {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--nz-font-mono);
+  font-size: var(--nz-size-sm);
+  font-variant-numeric: tabular-nums;
+}
+
+.nz-ledger caption {
+  caption-side: top;
+  text-align: left;
+  padding-bottom: var(--nz-unit);
+  font-size: var(--nz-size-xs);
+  letter-spacing: var(--nz-tracking-label);
+  text-transform: uppercase;
+  color: var(--nzh-text-muted);
+}
+
+.nz-ledger th {
+  padding: var(--nz-unit) calc(var(--nz-unit) * 2);
+  border-bottom: var(--nz-hairline) solid var(--nzh-border-strong);
+  font-size: var(--nz-size-xs);
+  font-weight: 600;
+  letter-spacing: var(--nz-tracking-label);
+  text-transform: uppercase;
+  text-align: left;
+  color: var(--nzh-text-muted);
+  white-space: nowrap;
+}
+
+.nz-ledger td {
+  height: var(--nz-row-height);
+  padding: 0 calc(var(--nz-unit) * 2);
+  border-bottom: var(--nz-hairline) solid var(--nzh-border);
+}
+
+.nz-ledger tbody tr:nth-child(even) {
+  background: var(--nzh-row-alt);
+}
+
+.nz-ledger__cell--num {
+  text-align: right;
+}
+
+.nz-ledger__cell--neg {
+  color: var(--nzh-danger);
+}
+
+.nz-ledger tfoot td {
+  border-top: 2px solid var(--nzh-border-strong);
+  border-bottom: 0;
+  font-weight: 600;
+}
+
+.nz-ledger__empty {
+  padding: calc(var(--nz-unit) * 6) calc(var(--nz-unit) * 2);
+  text-align: center;
+  color: var(--nzh-text-muted);
+  font-size: var(--nz-size-sm);
+}
+
+/* ============================================================
+   Rule
+   ============================================================ */
+
+.nz-rule {
+  border: 0;
+  border-top: var(--nz-hairline) solid var(--nzh-border);
+  margin: var(--nz-gutter) 0;
+}
+
+.nz-rule--strong {
+  border-top-color: var(--nzh-border-strong);
+}
+
+.nz-rule--labelled {
+  display: flex;
+  align-items: center;
+  gap: var(--nz-gutter);
+  border: 0;
+}
+
+.nz-rule--labelled::before,
+.nz-rule--labelled::after {
+  content: "";
+  flex: 1;
+  border-top: var(--nz-hairline) solid var(--nzh-border);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nz-button {
+    transition: none;
+  }
+  .nz-button:active:not(:disabled) {
+    transform: none;
+  }
+}

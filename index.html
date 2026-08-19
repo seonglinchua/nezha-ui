@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@NEZHA/UI — specimen sheet</title>
+    <script>
+      (() => {
+        const saved = localStorage.getItem("nezha-ui-appearance");
+        const mode = saved === "light" || saved === "dark" || saved === "system" ? saved : "system";
+        const resolved = mode === "system"
+          ? (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
+          : mode;
+        document.documentElement.dataset.nzMode = mode;
+        document.documentElement.dataset.nzTheme = resolved;
+      })();
+    </script>
+    <style>
+      html, body { margin: 0; padding: 0; }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/demo/main.tsx"></script>
+  </body>
+</html>

@@ -1,0 +1,28 @@
+/* @nezha/ui semantic appearance tokens. */
+:root,
+[data-nz-theme="light"] {
+  --nzh-bg: #f7f6f1; --nzh-surface: #f7f6f1; --nzh-surface-raised: #fffffc;
+  --nzh-text: #1a1e1c; --nzh-text-muted: #5c635e; --nzh-text-faint: #8b918c;
+  --nzh-border: #c4cbbe; --nzh-border-strong: #1a1e1c;
+  --nzh-action: #1f4b3f; --nzh-action-text: #f7f6f1; --nzh-success: #1f4b3f;
+  --nzh-warning: #7b6118; --nzh-danger: #9e2b23; --nzh-focus: #1f4b3f;
+  --nzh-row-alt: #e4eade; --nzh-z-nav: 20;
+}
+
+[data-nz-theme="dark"] {
+  --nzh-bg: #16181a; --nzh-surface: #16181a; --nzh-surface-raised: #1e2124;
+  --nzh-text: #e7e9e5; --nzh-text-muted: #a0a6a0; --nzh-text-faint: #6e746e;
+  --nzh-border: #343936; --nzh-border-strong: #e7e9e5;
+  --nzh-action: #7fb69c; --nzh-action-text: #16181a; --nzh-success: #7fb69c;
+  --nzh-warning: #d1ad4f; --nzh-danger: #d9584e; --nzh-focus: #7fb69c;
+  --nzh-row-alt: #202623;
+}
+
+:root,
+[data-nz-theme] {
+  --nz-font-sans: ui-sans-serif, system-ui, "Segoe UI", Helvetica, Arial, sans-serif;
+  --nz-font-mono: ui-monospace, SFMono-Regular, "SF Mono", "JetBrains Mono", Menlo, Consolas, monospace;
+  --nz-size-xs: 0.6875rem; --nz-size-sm: 0.8125rem; --nz-size-md: 0.9375rem; --nz-size-lg: 1.125rem;
+  --nz-tracking-label: 0.14em; --nz-unit: 4px; --nz-gutter: calc(var(--nz-unit) * 3);
+  --nz-hairline: 1px; --nz-radius: 0px; --nz-row-height: 32px;
+}
