@@ -36,6 +36,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -p tsconfig.build.json && vite build",
+    "build:site": "vite build --config vite.site.config.ts",
     "typecheck": "tsc --noEmit",
     "preview": "vite preview"
   },

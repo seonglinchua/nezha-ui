@@ -16,6 +16,8 @@ Version `0.1.0` is an MVP showcase and component-library foundation. The
 package is not yet published to npm; clone the repository to explore or build
 it locally.
 
+[Open the live specimen catalogue](https://seonglinchua.github.io/nezha-ui/)
+
 ## Run the specimen catalogue
 
 ```bash
@@ -175,6 +177,7 @@ design-qa.md      Design and interaction QA record
 | `npm run dev` | Start the specimen catalogue |
 | `npm run typecheck` | Check TypeScript without emitting files |
 | `npm run build` | Build JavaScript, declarations, and CSS into `dist/` |
+| `npm run build:site` | Build the GitHub Pages catalogue into `dist-site/` |
 | `npm run preview` | Preview the production build locally |
 
 ## Design principles
