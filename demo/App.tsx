@@ -3,7 +3,6 @@ import { Badge, Button, Field, Ledger, Panel } from "../src";
 import { columns, entries } from "./data";
 import { SiteNavigation } from "./SiteNavigation";
 import { useAppearance } from "./useAppearance";
-import "./styles.css";
 
 const layers = [
   { title: "Foundations", status: "Available", description: "Tokens, type, spacing, and rules." },
